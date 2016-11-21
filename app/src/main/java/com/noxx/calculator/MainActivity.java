@@ -1,22 +1,17 @@
 package com.noxx.calculator;
 
-/*import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}*/
-
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
+
+
+
+import android.app.Activity;
+
+
+
 
 public class MainActivity extends Activity {
 
@@ -38,7 +33,7 @@ public class MainActivity extends Activity {
     Button buttonClear;
     Button buttonEgal;
     Button buttonPoint;
-    EditText screen;
+    TextView screen;
 
     private double chiffre1;
     private boolean clicOperateur = false;
@@ -52,7 +47,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
-        screen = (EditText) findViewById(R.id.text_field);
+        screen = (TextView) findViewById(R.id.text_field);
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
@@ -176,10 +171,7 @@ public class MainActivity extends Activity {
             }
         });
 
-    }
-
-
-    public void chiffreClick(String string) {
+    }public void chiffreClick(String string) {
         if(update){
             update = false;
         }else{
@@ -258,8 +250,8 @@ public class MainActivity extends Activity {
         screen.setText("");
     }
 
-    //Voici la méthode qui fait le calcul qui a été demandé par l'utilisateur
-    private void calcul(){
+
+    protected void calcul(){
         if(operateur.equals("+")){
             chiffre1 = chiffre1 + Double.valueOf(screen.getText().toString()).doubleValue();
             screen.setText(String.valueOf(chiffre1));
@@ -284,4 +276,186 @@ public class MainActivity extends Activity {
             }
         }
     }
-}
+}/*public class MainActivity extends AppCompatActivity {
+
+
+    private TextView screen;
+    private boolean initialise=false;
+
+
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        final CalculatorManager cm = new CalculatorManager();
+
+        final TextView screen = (TextView) findViewById(R.id.text_field);
+        Button button0 = (Button) findViewById(R.id.button0);
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+        Button button5 = (Button) findViewById(R.id.button5);
+        Button button6 = (Button) findViewById(R.id.button6);
+        Button button7 = (Button) findViewById(R.id.button7);
+        Button button8 = (Button) findViewById(R.id.button8);
+        Button button9 = (Button) findViewById(R.id.button9);
+        Button buttonPoint = (Button) findViewById(R.id.buttonPoint);
+        Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+        Button buttonMoins = (Button) findViewById(R.id.buttonMoins);
+        Button buttonDiv = (Button) findViewById(R.id.buttonDivision);
+        Button buttonMul = (Button) findViewById(R.id.buttonMultiplier);
+        Button buttonClear = (Button) findViewById(R.id.buttonClear);
+        Button buttonEgal = (Button) findViewById(R.id.buttonEgal);
+
+
+        buttonPlus.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(cm.calcul("+", screen.getText().toString()));
+            }
+        });
+
+        buttonMoins.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //moinsClick();
+            }
+        });
+
+        buttonDiv.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //divClick();
+            }
+        });
+
+        buttonMul.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //mulClick();
+            }
+        });
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                resetClick();
+            }
+        });
+
+        buttonEgal.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                egalClick();
+            }
+        });
+
+        buttonPoint.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(dotClick(".",screen.getText().toString()));
+            }
+        });
+
+        button0.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("0",screen.getText().toString()));
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("1",screen.getText().toString()));
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("2",screen.getText().toString()));
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("3",screen.getText().toString()));
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("4",screen.getText().toString()));
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("5",screen.getText().toString()));
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("6",screen.getText().toString()));
+            }
+        });
+
+        button7.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("7",screen.getText().toString()));
+            }
+        });
+
+        button8.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("8",screen.getText().toString()));
+            }
+        });
+
+        button9.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                screen.setText(typedNumber("9",screen.getText().toString()));
+            }
+        });
+
+
+
+    }
+
+
+    public String typedNumber (String number, String display) {
+        if (display.equals("0")){
+            display=number;
+        }else{
+            display+=number;
+        }return display;
+    }
+
+    public String dotClick(String point, String display) {
+        if (!display.equals("0")){
+            display+=point;
+        }return display;
+    }
+
+
+
+    public void resetClick() {
+
+        screen.setText("0");
+
+    }
+
+    public void egalClick() {
+
+    }
+
+    public void initButtons (View view) {
+        int[] ids = {R.id.button0,R.id.button1,R.id.button2,R.id.button3,R.id.button0,R.id.button0,R.id.button0,R.id.button0,R.id.button0,R.id.button0
+                R.id.button0,R.id.button0,R.id.button0,R.id.button0}
+                for(int id : ids){
+                    view.findViewById(id).setOnClickListener(this);
+                }
+    }
+
+
+
+}*/
+
+

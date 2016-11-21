@@ -5,12 +5,12 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
     >
 
-<EditText android:id="@+id/text_field"
+<TextView android:id="@+id/text_field"
+    android:text="0"
+    android:textAlignment="textEnd"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textSize="60sp"
-    android:editable="false"
-    android:cursorVisible="false"
     android:background="@android:color/black"
     android:textColor="@android:color/background_light"
     />
