@@ -13,33 +13,17 @@ import android.app.Activity;
 
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity implements FragmentManagerListner {
 
 
-    Button button0;
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    Button button5;
-    Button button6;
-    Button button7;
-    Button button8;
-    Button button9;
-    Button buttonPlus;
-    Button buttonMoins;
-    Button buttonDiv;
-    Button buttonMul;
-    Button buttonClear;
+
     Button buttonEgal;
-    Button buttonPoint;
     TextView screen;
 
     private double chiffre1;
     private boolean clicOperateur = false;
     private boolean update = false;
     private String operateur = "";
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,56 +32,8 @@ public class MainActivity extends Activity {
 
 
         screen = (TextView) findViewById(R.id.text_field);
-        button0 = (Button) findViewById(R.id.button0);
-        button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
-        button4 = (Button) findViewById(R.id.button4);
-        button5 = (Button) findViewById(R.id.button5);
-        button6 = (Button) findViewById(R.id.button6);
-        button7 = (Button) findViewById(R.id.button7);
-        button8 = (Button) findViewById(R.id.button8);
-        button9 = (Button) findViewById(R.id.button9);
-        buttonPoint = (Button) findViewById(R.id.buttonPoint);
-        buttonPlus = (Button) findViewById(R.id.buttonPlus);
-        buttonMoins = (Button) findViewById(R.id.buttonMoins);
-        buttonDiv = (Button) findViewById(R.id.buttonDivision);
-        buttonMul = (Button) findViewById(R.id.buttonMultiplier);
-        buttonClear = (Button) findViewById(R.id.buttonClear);
+
         buttonEgal = (Button) findViewById(R.id.buttonEgal);
-
-
-
-
-        buttonPlus.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                plusClick();
-            }
-        });
-
-        buttonMoins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                moinsClick();
-            }
-        });
-
-        buttonDiv.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                divClick();
-            }
-        });
-
-        buttonMul.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                mulClick();
-            }
-        });
-
-        buttonClear.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                resetClick();
-            }
-        });
 
         buttonEgal.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -105,71 +41,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        buttonPoint.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick(".");
-            }
-        });
 
-        button0.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("0");
-            }
-        });
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("1");
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("2");
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("3");
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("4");
-            }
-        });
-
-        button5.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("5");
-            }
-        });
-
-        button6.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("6");
-            }
-        });
-
-        button7.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("7");
-            }
-        });
-
-        button8.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("8");
-            }
-        });
-
-        button9.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                chiffreClick("9");
-            }
-        });
 
     }public void chiffreClick(String string) {
         if(update){
@@ -181,6 +53,12 @@ public class MainActivity extends Activity {
         screen.setText(string);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        NormalFragment normalFragment = (NormalFragment) getSupportFragmentManager().findFragmentById(R.id.normal_fragment);
+        normalFragment.setFragmentManagerListner(this);
+    }
 
     public void plusClick(){
 
@@ -274,6 +152,63 @@ public class MainActivity extends Activity {
             }catch(ArithmeticException e){
                 screen.setText("0");
             }
+        }
+    }
+
+    @Override
+    public void onNormalButtonClick(String string) {
+        switch (string){
+            case "plus":
+                plusClick();
+                break;
+            case "moins":
+                moinsClick();
+                break;
+            case "multiplication":
+                mulClick();
+                break;
+            case "division":
+                divClick();
+                break;
+            case "clear":
+                resetClick();
+                break;
+            case "dot":
+                chiffreClick(".");
+                break;
+            case "0":
+                chiffreClick("0");
+                break;
+            case "1":
+                chiffreClick("1");
+                break;
+            case "2":
+                chiffreClick("2");
+                break;
+            case "3":
+                chiffreClick("3");
+                break;
+            case "4":
+                chiffreClick("4");
+                break;
+            case "5":
+                chiffreClick("5");
+                break;
+            case "6":
+                chiffreClick("6");
+                break;
+            case "7":
+                chiffreClick("7");
+                break;
+            case "8":
+                chiffreClick("8");
+                break;
+            case "9":
+                chiffreClick("9");
+                break;
+
+
+
         }
     }
 }/*public class MainActivity extends AppCompatActivity {
