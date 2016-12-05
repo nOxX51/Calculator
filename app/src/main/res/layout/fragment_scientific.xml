@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button android:id="@+id/sinus"
+            android:text="SIN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+
+            />
+
+        <Button android:id="@+id/cosinus"
+            android:text="COS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/tangante"
+            android:text="TAN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/x2"
+            android:text="X^2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button android:id="@+id/sinus_1"
+            android:text="SIN-1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/cosinus_1"
+            android:text="COS-1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/tangante_1"
+            android:text="TAN-1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/x3"
+            android:text="X3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button android:id="@+id/e_x"
+            android:text="E^X"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/ten_x"
+            android:text="10^X"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/one_div_x"
+            android:text="1/X"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/x_y"
+            android:text="X^Y"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button android:id="@+id/ln"
+            android:text="LN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/log"
+            android:text="LOG"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/sqrl"
+            android:text="SQRL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+        <Button android:id="@+id/plus_div_moins"
+            android:text="+/-"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/background_light"
+            />
+
+    </LinearLayout>
+</LinearLayout>

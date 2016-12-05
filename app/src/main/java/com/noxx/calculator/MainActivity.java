@@ -8,12 +8,14 @@ import android.widget.TextView;
 
 
 
+
 import android.app.Activity;
 
 
 
 
 public class MainActivity extends AppCompatActivity implements FragmentManagerListner {
+
 
 
 
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements FragmentManagerLi
                 egalClick();
             }
         });
+
+        getSupportActionBar().hide();
 
 
 
@@ -127,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManagerLi
         operateur = "";
         screen.setText("");
     }
+
 
 
     protected void calcul(){
