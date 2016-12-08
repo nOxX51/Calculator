@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@android:color/black"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:text="0"
         android:textAlignment="textEnd"
         android:textColor="@android:color/background_light" />
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:backgroundTint="@android:color/black"
         android:text="="
         android:textColor="@android:color/background_light" />
